@@ -13,10 +13,9 @@ import {
 export default function App() {
   // Chat State
   const [messages, setMessages] = useState([
-    { id: '1', text: 'Goodmorning love', sender: 'other' },
-    { id: '2', text: 'Goodmorning too love', sender: 'me' },
-    { id: '1', text: 'Kumusta school love', sender: 'other' },
-    { id: '2', text: 'Ok ra love bagsakonon hahaha', sender: 'me' },
+    { id: '1', text: 'Hello Sir!', sender: 'other' },
+    { id: '2', text: 'Im okay?', sender: 'me' },
+    { id: '3', text: 'I’m okay yes!', sender: 'other' },
   ]);
   const [input, setInput] = useState('');
 
@@ -85,7 +84,7 @@ export default function App() {
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.input}
-            placeholder="Chat diri ba"
+            placeholder="Type a message..."
             value={input}
             onChangeText={setInput}
           />
@@ -95,7 +94,7 @@ export default function App() {
         </View>
 
         {/* Comment Section */}
-        <Text style={styles.sectionTitle}>Comment Lang</Text>
+        <Text style={styles.sectionTitle}>Comments</Text>
         <FlatList
           data={comments}
           keyExtractor={(item) => item.id}
@@ -106,7 +105,7 @@ export default function App() {
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.input}
-            placeholder="Comment Diri sir"
+            placeholder="Add a comment..."
             value={newComment}
             onChangeText={setNewComment}
           />
@@ -122,7 +121,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'Pink',
+    backgroundColor: 'skyblue',
   },
   scrollArea: {
     flex: 1,
@@ -144,11 +143,11 @@ const styles = StyleSheet.create({
     maxWidth: '70%',
   },
   myMessage: {
-    backgroundColor: 'blue',
+    backgroundColor: 'violet',
     alignSelf: 'flex-end',
   },
   otherMessage: {
-    backgroundColor: 'Red',
+    backgroundColor: 'violet',
     alignSelf: 'flex-start',
   },
   messageText: {
@@ -162,7 +161,7 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     borderWidth: 1,
-    borderColor: '#ddd',
+    borderColor: 'black',
     borderRadius: 20,
     paddingHorizontal: 15,
     paddingVertical: 8,
@@ -170,18 +169,18 @@ const styles = StyleSheet.create({
   },
   sendButton: {
     marginLeft: 10,
-    backgroundColor: '#007AFF',
+    backgroundColor: 'lightgreen',
     paddingHorizontal: 20,
     paddingVertical: 10,
     justifyContent: 'center',
     borderRadius: 20,
   },
   sendText: {
-    color: '#fff',
+    color: 'blue',
     fontWeight: 'bold',
   },
   commentBubble: {
-    backgroundColor: '#F1F1F1',
+    backgroundColor: 'white',
     borderRadius: 10,
     padding: 10,
     marginVertical: 5,
@@ -190,6 +189,7 @@ const styles = StyleSheet.create({
   },
   commentText: {
     fontSize: 16,
-    color: '#333',
+    color: 'blue',
+    
   },
 });
